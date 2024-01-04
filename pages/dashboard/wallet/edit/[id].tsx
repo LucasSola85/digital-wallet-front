@@ -65,8 +65,6 @@ const EditWalletPage: NextPage<Props> = ({ currencyAndCoin, wallet }) => {
       currency: data.currency,
     };
 
-    console.log(payload)
-
     try {
       setLoading(true);
       const response = await walletApi.patch(

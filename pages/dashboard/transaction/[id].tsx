@@ -40,7 +40,6 @@ const NewTransactionPage: NextPage<Props> = ({ wallet }) => {
   const [loading, setLoading] = useState(false);
 
   const handleChangeOperacion = (event: SelectChangeEvent) => {
-    console.log("evenooooo===", event.target.value);
     setCredito(event.target.value === "credito" ? true : false);
   };
 
@@ -61,7 +60,6 @@ const NewTransactionPage: NextPage<Props> = ({ wallet }) => {
       if (response) setLoading(false);
       return router.push("/dashboard");
     } catch (error: any) {
-      console.log("________", error.response.data.message);
       alert(error.response.data.message);
       setLoading(false);
     }

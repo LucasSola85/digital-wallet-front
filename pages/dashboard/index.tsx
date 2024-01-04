@@ -23,11 +23,9 @@ const DashboardPage: NextPage<IDashboardPageProps> = ({ userWallets }) => {
     route.push('/dashboard/new-wallet')
   }
 
-  console.log(userWallets)
-
   useEffect(() => {
     Cookies.set('owner', userWallets[0].owner._id)
-  }, [])
+  }, [userWallets])
 
   return (
     <>

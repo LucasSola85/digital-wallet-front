@@ -43,7 +43,7 @@ export const WalletCard: FC<IWallet> = (wallet) => {
         setIsFavorite(true);
       }
     }
-  }, []);
+  }, [ wallet._id ]);
 
   useEffect(() => {
     // recorremos el transactions y obtenemos el created_at de cada uno
@@ -65,13 +65,12 @@ export const WalletCard: FC<IWallet> = (wallet) => {
     // obtenemos la diferencia entre las dos fechas
     const difference = currentDate.diff(lastDate, "years");
 
-    console.log("____difference", difference);
 
     // si la diferencia es mayor a 1, deshabilitamos la wallet
     if (difference === 1) {
       setIsDisabled(true);
     }
-  }, []);
+  }, [ wallet.transactions ]);
 
   const handleFavorite = () => {
     setIsFavorite(!isFavorite);
